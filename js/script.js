@@ -1,5 +1,29 @@
 //jQuery is required to run this code
 $( document ).ready(function() {
+
+    function iOS() {
+      var iDevices = [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod'
+      ];
+
+      if (!!navigator.platform) {
+        while (iDevices.length) {
+          if (navigator.platform === iDevices.pop()){ return true; }
+        }
+      }
+
+      return false;
+    }
+
+    if(iOS){
+        
+    }
+
     scaleVideoContainer();
 
     initBannerVideoSize('.video-container .poster img');
@@ -12,11 +36,12 @@ $( document ).ready(function() {
         scaleBannerVideoSize('.video-container .filter');
         scaleBannerVideoSize('.video-container video');
     });
+
     function scaleVideoContainer() {
-    var height = $(window).height() + 5;
-    var unitHeight = parseInt(height) + 'px';
-    $('.homepage-hero-module').css('height',unitHeight);
-}
+        var height = $(window).height() + 5;
+        var unitHeight = parseInt(height) + 'px';
+        $('.homepage-hero-module').css('height',unitHeight);
+    }
 
     function initBannerVideoSize(element){
         $(element).each(function(){

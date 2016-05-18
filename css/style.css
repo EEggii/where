@@ -51,12 +51,13 @@
     border-color: white;
     border-radius: 100%;
     line-height: 468px;
+    z-index: 100;
 }
 
 .container {
     height:100%;
     position: absolute;
-    z-index: 99;
+    z-index: 98;
     width: 100%;
 
     /* Firefox */
