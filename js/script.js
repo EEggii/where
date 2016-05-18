@@ -1,41 +1,28 @@
 //jQuery is required to run this code
 $( document ).ready(function() {
-    var startFlag = true;
-    var arr = ["하오치", "맘스터치", "롯데리아", "동큐", "1학", 
-                "2학", "3학", "육쌈", "갈쌈", "EXIT", "본도시락", 
-                "조마루", "두리가마", "미스터피자", "서브웨이", "롯데리아", 
-                "아저씨", "일미", "오늘은닭", "맛존", "유가네",
-                "충만치킨", "왕큰손파닭", "봉구스 밥버거", "편의점행", "오쭈", "스바라시", "한솥"];
-    // var colors = ["#F7C9C9", "#F7776A", "#90A7D1", "#014C8F", 
-    //                 "F9E137", "98DCDD", "#9896A4", "#DD443C", 
-    //                 "#B08E69", "#72CA4F"];
-    var ob = document.getElementById("store");
-    var intervalId = 0;
 
+    // function iOS() {
+    //   var iDevices = [
+    //     'iPad Simulator',
+    //     'iPhone Simulator',
+    //     'iPod Simulator',
+    //     'iPad',
+    //     'iPhone',
+    //     'iPod'
+    //   ];
 
-    function iOS() {
-      var iDevices = [
-        'iPad Simulator',
-        'iPhone Simulator',
-        'iPod Simulator',
-        'iPad',
-        'iPhone',
-        'iPod'
-      ];
+    //   if (!!navigator.platform) {
+    //     while (iDevices.length) {
+    //       if (navigator.platform === iDevices.pop()){ return true; }
+    //     }
+    //   }
 
-      if (!!navigator.platform) {
-        while (iDevices.length) {
-          if (navigator.platform === iDevices.pop()){ return true; }
-        }
-      }
+    //   return false;
+    // }
 
-      return false;
-    }
-
-    if(iOS){
-        $("#bg-video").first().attr('src','');
-        return;
-    }
+    // if(iOS){
+    //     $("#bg-video").first().attr('src','');
+    // }
 
     scaleVideoContainer();
 
@@ -91,7 +78,19 @@ $( document ).ready(function() {
 
         });
     }
-   
+    
+    var startFlag = true;
+    var arr = ["하오치", "맘스터치", "롯데리아", "동큐", "1학", 
+                "2학", "3학", "육쌈", "갈쌈", "EXIT", "본도시락", 
+                "조마루", "두리가마", "미스터피자", "서브웨이", "롯데리아", 
+                "아저씨", "일미", "오늘은닭", "맛존", "유가네",
+                "충만치킨", "왕큰손파닭", "봉구스 밥버거", "편의점행", "오쭈", "스바라시", "한솥"];
+    // var colors = ["#F7C9C9", "#F7776A", "#90A7D1", "#014C8F", 
+    //                 "F9E137", "98DCDD", "#9896A4", "#DD443C", 
+    //                 "#B08E69", "#72CA4F"];
+    var ob = document.getElementById("store");
+    var intervalId = 0;
+
     ob.onclick = function(){
         startFlag = !startFlag;
         var time = 0;
