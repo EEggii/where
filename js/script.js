@@ -34,6 +34,7 @@ $( document ).ready(function() {
 
     if(iOS){
         $("#bg-video").first().attr('src','');
+        return;
     }
 
     scaleVideoContainer();
