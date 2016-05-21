@@ -132,6 +132,7 @@ body {
     padding: 0;
     background-color: black;
     overflow: hidden;
+    z-index: 98;
 }
 
 .header div {
