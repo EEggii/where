@@ -1,60 +1,16 @@
 //jQuery is required to run this code
 $( document ).ready(function() {
-
-    scaleVideoContainer();
-
-    initBannerVideoSize('.video-container .poster img');
-    initBannerVideoSize('.video-container .filter');
-    initBannerVideoSize('.video-container video');
-
-    $(window).on('resize', function() {
-        scaleVideoContainer();
-        scaleBannerVideoSize('.video-container .poster img');
-        scaleBannerVideoSize('.video-container .filter');
-        scaleBannerVideoSize('.video-container video');
-    });
-
-    function scaleVideoContainer() {
-        var height = $(window).height() + 5;
-        var unitHeight = parseInt(height) + 'px';
-        $('.homepage-hero-module').css('height',unitHeight);
-    }
-
-    function initBannerVideoSize(element){
-        $(element).each(function(){
-            $(this).data('height', $(this).height());
-            $(this).data('width', $(this).width());
-        });
-
-        scaleBannerVideoSize(element);
-    }
-
-    function scaleBannerVideoSize(element){
-
-        var windowWidth = $(window).width(),
-        windowHeight = $(window).height() + 5,
-        videoWidth,
-        videoHeight;
-
-        console.log(windowHeight);
-
-        $(element).each(function(){
-            var videoAspectRatio = $(this).data('height')/$(this).data('width');
-
-            $(this).width(windowWidth);
-
-            if(windowWidth < 1000){
-                videoHeight = windowHeight;
-                videoWidth = videoHeight / videoAspectRatio;
-                $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
-
-                $(this).width(videoWidth).height(videoHeight);
-            }
-
-            $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
-
-        });
-    }
+    colors = ["#1abc9c","#3498db","#ea5b4d","#9b59b6","#34495e","#16a085","#27ae60","#2980b9","#f1c40f","#e67e22",
+                "#e74c3c","#f39c12","#d35400","#c0392b","#06b3db","#e3b63d","#dc3d66","#bd3559","#0082c8","#16528e",
+                "#e54b4b","#a2c5bf","#167c80","#72616e","#72BDC2","#F99899","#2C9AB7","#52BAD5","#6DC5DC","#B1E0EC",
+                "#449A88","#72C1B0","#95D1C4","#C5E5DE","#FEBE12","#FED156","#DB3A1B","#E85C41","#EE836E","#66CC99",
+                "#8A9BB1","#CC89A2","#C26787","#64AE60","#27695E","#993366","#8E368B","#345773","#E8755C","#DB334E",
+                "#98AE60","#78AD45","#547B30","#527D5A","#D83944","#993366","#782344","#8ADCB3"];
+    
+    setInterval(function() {
+        var random_number = Math.floor(Math.random() * colors.length);
+        $(document.body).css({ backgroundColor: colors[random_number] });
+      }, 5000);
     
     var startFlag = true;
     var arr = ["하오치", "맘스터치", "롯데리아", "동큐", "1학", 
@@ -138,3 +94,6 @@ function leadingZeros(n, digits) {
         }
     return zero + n;
 }
+
+
+
