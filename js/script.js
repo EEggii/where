@@ -11,6 +11,8 @@ $( document ).ready(function() {
         var random_number = Math.floor(Math.random() * colors.length);
         $(document.body).css({ backgroundColor: colors[random_number] });
       }, 5000);
+	
+    
     
     var startFlag = true;
   //  var arr = ["하오치", "맘스터치", "롯데리아", "동큐", "1학", 
@@ -43,6 +45,9 @@ $( document ).ready(function() {
                 intervalId = setInterval(function(){
                     var r = Math.floor((Math.random() * arr.length) + 1);
                     $store.text(arr[r-1]);
+		    if(arr[r-1].length >= 6) {
+			$store.css({ fontSize: "96px"});
+		    }
                     time += 100;
 
                     if(time > 3000){
