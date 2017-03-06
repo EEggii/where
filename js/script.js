@@ -47,6 +47,8 @@ $( document ).ready(function() {
                     $store.text(arr[r-1]);
 		    if(arr[r-1].length >= 6) {
 			$store.css({ fontSize: "96px"});
+		    } else {
+		        $store.css({ fontSize: "128px" });
 		    }
                     time += 100;
 
